@@ -1,0 +1,56 @@
+ <!-- MAIN -->
+ <div class="col py-3">
+
+  <h1>
+      Angular 7 - 메인 
+  </h1>
+
+
+  <div class="card">
+      <h4 class="card-header">Front Requirements</h4>
+      <div class="card-body">
+          <ul>
+              <li>JQuery 3.3.1</li>
+              <li>Bootstrap 4.3.1</li>
+          </ul>
+      </div>
+  </div>
+
+  <hr>
+
+  <div class="card">
+    <h4 class="card-header">개발환경설정</h4>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">1) "git clone www.github.com/hwanee47/" </li>
+        <li class="list-group-item">2) npm install</li>
+        <li class="list-group-item">3) ng serve</li>
+        <li class="list-group-item">
+            <p>
+                4) http 통신 예제
+            </p>
+            <button class="btn btn-primary" (click)="Http()">http 통신</button>
+  
+            <div *ngFor="let data of dataArray.result_list">
+                {{(data.idx)}},
+                {{(data.title)}},
+                {{(data.create_date)}}
+            </div>
+            
+            <ag-grid-angular 
+                [pagination]="true"
+                [enableFilter]="true"
+                style="width: 500px; height: 500px;" 
+                class="ag-theme-balham"
+                [rowData]="dataArray.result_list" 
+                [columnDefs]="columnDefs">
+            </ag-grid-angular>
+
+        </li>
+    </ul>
+  </div>
+
+  <hr>
+  
+  
+</div>
+<!-- Main Col END -->
